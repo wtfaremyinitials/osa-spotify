@@ -2,9 +2,23 @@
   "name": "osa-spotify",
   "version": "1.0.0",
   "description": "Bring the power of NodeJS to Spotify on Mac",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/wtfaremyinitials/osa-spotify.git"
+  },
   "main": "index.js",
-  "devDependencies": {
+  "license": "MIT",
+  "dependencies": {
     "osa": "^2.0.1",
     "q": "^1.1.1"
-  }
+  },
+  "keywords": [
+      "spotify",
+      "music",
+      "osx",
+      "yosemite",
+      "osa",
+      "jxa",
+      "automation"
+  ]
 }
