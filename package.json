@@ -1,0 +1,10 @@
+{
+  "name": "osa-spotify",
+  "version": "1.0.0",
+  "description": "Bring the power of NodeJS to Spotify on Mac",
+  "main": "index.js",
+  "devDependencies": {
+    "osa": "^2.0.1",
+    "q": "^1.1.1"
+  }
+}
