@@ -13,7 +13,7 @@ Installation
 **Requires OSX 10.10 Yosemite.**
 
 ```bash
-npm install osa-imessage
+npm install osa-spotify
 ```
 
 Usage
