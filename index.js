@@ -26,4 +26,19 @@ function prev() {
     return osa(() => Application('Spotify').previousTrack())()
 }
 
-module.exports = { play, pause, toggle, next, prev }
+function getCurrentTrack() {
+    return osa(() => {
+        var track = Application('Spotify').currentTrack
+        return {
+            id: track.id(),
+            name: track.name(),
+            album: track.album(),
+            artist: track.artist(),
+            duration: track.duration(),
+            artwork: track.artworkUrl(),
+            popularity: track.popularity()
+        }
+    })()
+}
+
+module.exports = { play, pause, toggle, next, prev, getCurrentTrack }

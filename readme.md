@@ -40,5 +40,8 @@ spotify.next()
 // Play previous track in current playlist
 spotify.back()
 
+// Get info about the current tracjk
+spotify.getCurrentTrack().then(console.log)
+
 // Note: All functions return promises that resolve when the operation completes
 ```
