@@ -5,7 +5,7 @@ osa-spotify
 ![](https://img.shields.io/npm/v/osa-spotify.svg)
 ![](https://img.shields.io/npm/l/osa-spotify.svg)
 
-A node.js module to control Spotify on OSX.
+> Control the Spotify desktop macOS app
 
 Installation
 ===
@@ -13,35 +13,32 @@ Installation
 **Requires OSX 10.10 Yosemite.**
 
 ```bash
-npm install osa-spotify
+npm install osa-spotify --save
 ```
 
 Usage
 ====
 
 ```js
-var spotify = require('osa-spotify');
+var spotify = require('osa-spotify')
 
-// Play a song with the specified Spotify URI
-spotify.playTrack('spotify:track:0FutrWIUM5Mg3434asiwkp');
+// Play a song with a specific Spotify URI
+spotify.play('spotify:track:0FutrWIUM5Mg3434asiwkp')
 
 // Pause playback
-spotify.pause();
+spotify.pause()
 
 // Resume playback
-spotify.play();
+spotify.play()
 
 // Toggle playback (if paused, play; if playing, pause)
-spotify.toggle();
+spotify.toggle()
 
 // Play next track in current playlist
-spotify.next();
+spotify.next()
 
 // Play previous track in current playlist
-spotify.back();
+spotify.back()
 
-/*
- *  Note: All methods can accept a callback function that will be
- *      executed when the operation completes
- */
+// Note: All functions return promises that resolve when the operation completes
 ```
