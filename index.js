@@ -47,6 +47,7 @@ function getPlayerState() {
         return {
             state: s.playerState(),
             volume: s.soundVolume(),
+            position: s.playerPosition(),
             repeating: s.repeating(),
             shuffling: s.shuffling(),
         }
