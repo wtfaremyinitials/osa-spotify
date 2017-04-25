@@ -41,4 +41,19 @@ function getCurrentTrack() {
     })()
 }
 
-module.exports = { play, pause, toggle, next, prev, getCurrentTrack }
+function getPlayerState() {
+    return osa(() => {
+        var s = Application('Spotify')
+        return {
+            state: s.playerState(),
+            volume: s.soundVolume(),
+            repeating: s.repeating(),
+            shuffling: s.shuffling(),
+        }
+    })()
+}
+
+module.exports = {
+    play, pause, toggle, next, prev,
+    getCurrentTrack, getPlayerState
+}
