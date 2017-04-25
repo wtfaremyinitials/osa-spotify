@@ -1,51 +1,29 @@
-var q    = require('q');
-var osa  = require('osa');
-var osaq = q.denodeify(osa);
-var noop = function(){};
+var osa = require('osa2')
 
-var Spotify = {
+function play(uri) {
+    if (uri)
+        return playTrack(uri)
+    return osa(() => Application('Spotify').play())()
+}
 
-    pause: function(cb) {
-        return osaq(function() {
-            Application('Spotify').pause();
-            return {};
-        }, cb);
-    },
+function playTrack(uri) {
+    return osa((uri) => Application('Spotify').playTrack(uri))(uri)
+}
 
-    play: function(cb) {
-        return osaq(function() {
-            Application('Spotify').play();
-            return {};
-        }, cb);
-    },
+function pause() {
+    return osa(() => Application('Spotify').pause())()
+}
 
-    toggle: function(cb) {
-        return osaq(function() {
-            Application('Spotify').playpause();
-            return {};
-        }, cb);
-    },
+function toggle() {
+    return osa(() => Application('Spotify').playpause())()
+}
 
-    next: function(cb) {
-        return osaq(function() {
-            Application('Spotify').nextTrack();
-            return {};
-        }, cb);
-    },
+function next() {
+    return osa(() => Application('Spotify').nextTrack())()
+}
 
-    back: function(cb) {
-        return osaq(function() {
-            Application('Spotify').previousTrack();
-            return {};
-        }, cb);
-    },
+function prev() {
+    return osa(() => Application('Spotify').previousTrack())()
+}
 
-    playTrack: function(uri, cb) {
-        return osa(function(uri) {
-            Application('Spotify').playTrack(uri);
-            return {};
-        }, uri, cb || noop);
-    }
-};
-
-module.exports = Spotify;
+module.exports = { play, pause, toggle, next, prev }
