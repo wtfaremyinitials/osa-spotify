@@ -1,6 +1,6 @@
 {
   "name": "osa-spotify",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "Bring the power of NodeJS to Spotify on Mac",
   "repository": {
     "type": "git",
