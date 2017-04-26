@@ -34,9 +34,11 @@ function getCurrentTrack() {
             name: track.name(),
             album: track.album(),
             artist: track.artist(),
+            number: track.trackNumber(),
             duration: track.duration(),
             artwork: track.artworkUrl(),
-            popularity: track.popularity()
+            popularity: track.popularity(),
+            albumArtist: track.albumArtist(),
         }
     })()
 }
